@@ -55,15 +55,16 @@ nav .btn{padding:10px 20px}
 .hero figcaption{position:absolute;left:16px;bottom:16px;background:rgba(255,253,247,.94);border-radius:12px;padding:10px 16px;font-size:20px;font-weight:700}
 /* stats */
 .stats{background:#b3402a;color:#fff;padding:56px 0}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-.stat b{display:block;font-size:112px;line-height:1;font-weight:900}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:44px 32px;text-align:center}
+.stat b{display:block;font-size:72px;line-height:1;font-weight:900}
 .stat .count{font-size:inherit}
 .stat .unit{font-size:44px;font-weight:900}
-.stat .lbl{font-size:22px;margin-top:10px}
+.stat .lbl{font-size:22px;margin-top:18px}
 .stat .sub2{font-size:20px;opacity:.85}
 /* marquee */
 .marquee{background:#1f4e5f;color:#f8f2e7;overflow:hidden;padding:16px 0;white-space:nowrap}
-.marquee .track{display:inline-block;animation:mq 26s linear infinite;font-size:22px;font-weight:900;letter-spacing:.08em}
+.marquee .track{display:flex;width:max-content;animation:mq 78s linear infinite;font-size:22px;font-weight:900;letter-spacing:.08em}
+.marquee .seg{display:flex;flex-shrink:0;white-space:nowrap}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 /* about */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
@@ -133,7 +134,7 @@ footer a{color:#f3d98b;text-decoration:none}
   .hero .wrap{grid-template-columns:1fr;gap:36px}
   .hero h1{font-size:56px}
   .stats .wrap{grid-template-columns:repeat(2,1fr)}
-  .stat b{font-size:64px}
+  .stat b{font-size:56px}
   .grid2,.shows,.books,.media{grid-template-columns:1fr}
   .three,.cards{grid-template-columns:1fr}
   nav a.nl{display:none}
@@ -167,7 +168,7 @@ footer a{color:#f3d98b;text-decoration:none}
 <div class="chips"><span>廚娘香Q秀</span><span>美麗心台灣</span><span>導播</span><span>製作人</span><span>講座</span></div>
 <div class="cta"><a class="btn" href="#shows">認識瓊文</a><a class="btn ghost" href="#story">三十年大事記</a></div>
 </div>
-<figure><img src="images/img-001.webp" width="1000" height="667" alt="電視攝影棚裡的廚房佈景，兩台專業攝影機對著一桌熱騰騰的家常菜" data-slot="img-001"><figcaption>攝影棚裡的廚房——概念插畫</figcaption></figure>
+<figure><img src="images/img-001.webp" width="1000" height="1004" alt="張瓊文本人正面大頭照，側頭微笑，背景是木格紋屏風" data-slot="img-001" style="object-position:50% 25%"><figcaption>張瓊文</figcaption></figure>
 </div></header>
 
 <section class="stats"><div class="wrap">
@@ -177,14 +178,14 @@ footer a{color:#f3d98b;text-decoration:none}
 <div class="stat"><b><span class="count" data-n="597">0</span></b><div class="lbl">美麗心台灣集數</div><div class="sub2">2026 年已播至第 597 集</div></div>
 </div></section>
 
-<div class="marquee"><div class="track">廚娘香Q秀　·　美麗心台灣　·　三台時代　·　導播　·　製作人　·　影視製作　·　講座　·　廚娘香Q秀　·　美麗心台灣　·　三台時代　·　導播　·　製作人　·　影視製作　·　講座　·　</div></div>
+<div class="marquee"><div class="track"><div class="seg">廚娘香Q秀　·　美麗心台灣　·　三台時代　·　導播　·　製作人　·　影視製作　·　講座　·　廚娘香Q秀　·　美麗心台灣　·　三台時代　·　導播　·　製作人　·　影視製作　·　講座　·　廚娘香Q秀　·　美麗心台灣　·　三台時代　·　導播　·　製作人　·　影視製作　·　講座　·　</div><div class="seg" aria-hidden="true">廚娘香Q秀　·　美麗心台灣　·　三台時代　·　導播　·　製作人　·　影視製作　·　講座　·　廚娘香Q秀　·　美麗心台灣　·　三台時代　·　導播　·　製作人　·　影視製作　·　講座　·　廚娘香Q秀　·　美麗心台灣　·　三台時代　·　導播　·　製作人　·　影視製作　·　講座　·　</div></div></div>
 
 <section class="block" id="about"><div class="wrap reveal">
 <p class="kicker">關於瓊文</p>
 <h2>鏡頭後面的人，<span class="hl">把主角讓給故事</span></h2>
 <p class="sub">觀眾記得廚娘的笑、記得那碗湯的香，很少有人知道：把這些端上桌的人，叫張瓊文。</p>
 <div class="grid2" style="margin-top:28px">
-<div><img src="images/img-002.webp" width="1000" height="667" alt="1990 年代風格的電視新聞攝影棚，主播桌、攝影機與監看螢幕" data-slot="img-002"><div class="cap">三台時代的新聞攝影棚——概念插畫</div></div>
+<div><img src="images/img-002.webp" width="1000" height="667" alt="綠幕棚裡的拍攝現場，一位男士站在綠幕前，攝影師扛著攝影機" data-slot="img-002"><div class="cap">綠幕棚——拍攝大樹教練官方 YouTube 頻道</div></div>
 <div>
 <p>張瓊文的電視生涯，從三台時代開始。1991 年，華視晚間新聞國慶特別報導，二十位記者共同播報，名單裡有她。記者、導播、製作人——她把電視台裡幕後的工種，幾乎走過一輪。</p>
 <p style="margin-top:14px">後來她投入新唐人電視台，影視製作與講座是她現在的主場。一個節目做十年、十五年，在她手上不是新聞，是日常。</p>
@@ -201,8 +202,8 @@ footer a{color:#f3d98b;text-decoration:none}
 <h2>一桌菜，<span class="hl">一個台灣</span></h2>
 <p class="sub">她手上的兩個節目，一個端菜，一個端人。加起來，就是她眼裡的台灣。</p>
 <div class="shows" style="margin-top:28px">
-<div class="show"><img src="images/img-003.webp" width="1000" height="667" alt="木桌上的台灣家常菜：白飯、麵線、滷肉、青菜、豆腐" data-slot="img-003"><h3><span>廚娘香Q秀</span>　節目製作人</h3><div class="meta">新唐人亞太電視台 · 2010 年開播 · 已播 900+ 集</div><p>新唐人亞太台的長壽美食節目。主持人廚娘卸下空姐制服走進廚房，瓊文在幕後把關：找來賓、排菜色、顧流程。從 2010 年第一集，到 2026 年的第 916 集，一道家常菜，做了十六年。</p></div>
-<div class="show"><img src="images/img-004.webp" width="1000" height="667" alt="金色夕陽下的台灣梯田與紅瓦小村" data-slot="img-004"><h3><span>美麗心台灣</span>　節目企劃</h3><div class="meta">新唐人亞太電視台 · 已播 597 集</div><p>走遍台灣各行各業用心的經營者：安全帽職人、海洋深層水、花蓮民宿主人。瓊文兼任企劃，把「島民的勤奮與生命力」一個一個找出來，讓世界看見台灣。</p></div>
+<div class="show"><img src="images/img-003.webp" width="1000" height="667" alt="拍攝花絮：棚內團隊與來賓合影" data-slot="img-003"><h3><span>廚娘香Q秀</span>　節目製作人</h3><div class="meta">新唐人亞太電視台 · 2010 年開播 · 已播 900+ 集</div><p>新唐人亞太台的長壽美食節目。主持人廚娘卸下空姐制服走進廚房，瓊文在幕後把關：找來賓、排菜色、顧流程。從 2010 年第一集，到 2026 年的第 916 集，一道家常菜，做了十六年。</p></div>
+<div class="show"><img src="images/img-004.webp" width="1000" height="667" alt="採訪現場：客廳式訪談，攝影機對準受訪者" data-slot="img-004"><h3><span>美麗心台灣</span>　節目企劃</h3><div class="meta">新唐人亞太電視台 · 已播 597 集</div><p>走遍台灣各行各業用心的經營者：安全帽職人、海洋深層水、花蓮民宿主人。瓊文兼任企劃，把「島民的勤奮與生命力」一個一個找出來，讓世界看見台灣。</p></div>
 </div>
 <div class="three">
 <div class="card"><div class="num">01</div><h3>企劃</h3><p>題目從哪裡來？從市場、從田裡、從一個認真過日子的人身上來。先找到值得拍的人，節目就成功一半。</p></div>
@@ -226,7 +227,7 @@ footer a{color:#f3d98b;text-decoration:none}
 <div class="ev"><div class="yr">2026</div><h3>兩個節目持續播出</h3><p>《廚娘香Q秀》第 916 集、《美麗心台灣》第 597 集，仍在新唐人亞太台播出。</p></div>
 </div>
 </div>
-<div><img src="images/img-005.webp" width="1000" height="667" alt="導播控制台與六台監看螢幕，畫面是美食與台灣山水" data-slot="img-005"><div class="cap">導播台——概念插畫</div>
+<div><img src="images/img-005.webp" width="1000" height="667" alt="採訪花絮：訪談中的攝影機與監看畫面" data-slot="img-005"><div class="cap">採訪現場——台灣時尚發展協會 林家旭理事長</div>
 <div class="card" style="margin-top:20px"><h3>同名提醒</h3><p>叫「張瓊文」的有好幾位不同的人：影集《何百芮的地獄戀曲》導演、大法官被提名人、滑冰選手、圖卡講師、繪本作家、學校教師——都不是本頁的瓊文。本頁只寫新唐人電視台這一位。</p></div>
 </div>
 </div>
@@ -237,7 +238,7 @@ footer a{color:#f3d98b;text-decoration:none}
 <h2>把幕後，<span class="hl">講到台前</span></h2>
 <p class="sub">做節目是她的本行，講座是她把本行交出去的方式。</p>
 <div class="grid2" style="margin-top:28px">
-<div><img src="images/img-006.webp" width="1000" height="667" alt="空無一人的講座舞台，木製講台在聚光燈下" data-slot="img-006"><div class="cap">講座舞台——概念插畫</div></div>
+<div><img src="images/img-006.webp" width="1000" height="667" alt="採訪花絮：兩位受訪者在客廳中交談" data-slot="img-006"><div class="cap">採訪花絮——台灣時尚發展協會 林家旭理事長</div></div>
 <div>
 <p>一個節目從零到開播，要經過多少關？選題、找人、勘景、寫流程、顧現場、剪接、播出——瓊文在講座裡分享的，就是這套走過三十多年的流程。</p>
 <p style="margin-top:14px">她也為麥田金老師的書寫推薦序：以《廚娘香Q秀》製作人的身分去拜訪烘焙老師，親自開車載團隊去桃園拜訪冠軍米農友——做節目的人，先做人。</p>
@@ -252,7 +253,7 @@ footer a{color:#f3d98b;text-decoration:none}
 <p>桃園冠軍米、屏東無蛋奶蛋糕、高雄模範勞工的手藝——《廚娘香Q秀》十六年來請過的來賓，全是台灣各地的職人與好物。瓊文的企劃邏輯很簡單：東西要真，人要真，故事就自己會說話。</p>
 <p style="margin-top:14px">《美麗心台灣》也一樣：安全帽、海洋深層水、民宿、陶藝——主角永遠是那個把一件事做到極致的人。</p>
 </div>
-<div><img src="images/img-007.webp" width="1000" height="667" alt="台灣傳統市集攤位：水果、茶葉、陶器與紅燈籠" data-slot="img-007"><div class="cap">台灣好物市集——概念插畫</div></div>
+<div><img src="images/img-007.webp" width="1000" height="667" alt="拍攝花絮：兩位夥伴討論設計稿" data-slot="img-007"><div class="cap">拍攝花絮——討論設計稿</div></div>
 </div>
 </div></section>
 
@@ -260,7 +261,7 @@ footer a{color:#f3d98b;text-decoration:none}
 <p class="kicker">推薦與著作關聯</p>
 <h2>她寫的序，<span class="hl">她掛名的推薦</span></h2>
 <div class="books" style="margin-top:28px">
-<div class="book"><img src="images/img-008.webp" width="1000" height="667" alt="台灣東海岸落日，懸崖海浪與山丘上的廣播塔剪影" data-slot="img-008"><h3>《烘焙女王的減醣料理課》推薦序</h3><div class="meta" style="color:#8a6d2b;font-weight:900">麥田金 著 · 優品文化 · 2022/02/15</div><p>推薦序署名「『新唐人電視台』〔廚娘香Q秀〕節目製作人 張瓊文」。她在序裡寫：好幾年前以製作人身分去拜訪麥田金老師，對方一聽她還兼任《美麗心台灣》企劃，馬上引薦桃園冠軍米農友，親自開車載她們去拜訪。</p></div>
+<div class="book"><img src="images/img-008.webp" width="1000" height="667" alt="拍攝花絮：與來賓合影" data-slot="img-008"><h3>《烘焙女王的減醣料理課》推薦序</h3><div class="meta" style="color:#8a6d2b;font-weight:900">麥田金 著 · 優品文化 · 2022/02/15</div><p>推薦序署名「『新唐人電視台』〔廚娘香Q秀〕節目製作人 張瓊文」。她在序裡寫：好幾年前以製作人身分去拜訪麥田金老師，對方一聽她還兼任《美麗心台灣》企劃，馬上引薦桃園冠軍米農友，親自開車載她們去拜訪。</p></div>
 <div class="book"><div class="card" style="height:100%">
 <h3>《日日幸福廚房大百科》系列推薦</h3>
 <p>第 4、5、6 冊皆列名推薦，頭銜為「新唐人節目製作人」：</p>
