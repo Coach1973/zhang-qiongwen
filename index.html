@@ -112,6 +112,22 @@ nav .btn{padding:10px 20px}
 /* contact */
 .contact{text-align:center}
 .contact .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.lead{max-width:760px;margin:32px auto 0;text-align:left;background:#fff;border:1px solid #e8dcc8;border-radius:22px;padding:32px;box-shadow:0 12px 30px rgba(60,40,10,.08)}
+.lead h3{font-size:28px;margin-bottom:6px}
+.lead .sub{margin-bottom:20px}
+.lead .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.lead label{display:flex;flex-direction:column;gap:6px;font-size:20px;font-weight:700;color:#3a332c;margin-bottom:16px}
+.lead .two label{margin-bottom:0}
+.lead input,.lead select,.lead textarea{min-height:52px;background:#fffdf7;border:1.5px solid #c99a3f;border-radius:12px;padding:10px 16px;font:inherit;font-size:20px;font-weight:400;color:#1c1a17}
+.lead textarea{min-height:120px;resize:vertical}
+.lead input:focus,.lead select:focus,.lead textarea:focus{outline:3px solid #f3d98b;outline-offset:1px}
+.lead .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.lead button.btn{cursor:pointer;font-family:inherit;width:100%;margin-top:4px}
+.lead button.btn:disabled{opacity:.6;cursor:wait}
+.lead .msg{margin-top:14px;min-height:1.6em;font-size:20px}
+.lead .msg.err{color:#b3402a;font-weight:700}
+.lead .done{padding:20px 4px;text-align:center}
+.lead .done h3{color:#b3402a;font-size:30px}
 /* footer */
 footer{background:#1c1a17;color:#e8dcc8;padding:36px 0;font-size:20px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px 32px;justify-content:center}
@@ -139,6 +155,8 @@ footer a{color:#f3d98b;text-decoration:none}
   .stats .wrap{grid-template-columns:repeat(2,1fr)}
   .stat b{font-size:56px}
   .photos{column-count:1}
+  .lead{padding:22px}
+  .lead .two{grid-template-columns:1fr}
   .grid2,.shows,.books,.media{grid-template-columns:1fr}
   .three,.cards{grid-template-columns:1fr}
   nav a.nl{display:none}
@@ -309,8 +327,26 @@ footer a{color:#f3d98b;text-decoration:none}
 <section class="block" id="contact" style="background:#fffdf7"><div class="wrap reveal contact">
 <p class="kicker">聯絡瓊文</p>
 <h2>想請她做節目、開講座，<span class="hl">先從這裡找到她</span></h2>
-<p class="sub">個人聯絡方式尚未公開查到，以下是節目播出平台。確認聯絡方式後，會補上頁面。</p>
-<div class="row">
+<p class="sub">想邀請她做節目、開講座，或聊影視製作，直接在這裡留下資料，我們收到後會盡快與您聯絡。</p>
+<form class="lead" id="lead" novalidate>
+<h3>留下資料，我們主動聯絡您</h3>
+<p class="sub">填好送出即可，不用另外打電話。</p>
+<div class="two">
+<label>姓名<input name="name" type="text" maxlength="30" autocomplete="name" required></label>
+<label>電話<input name="phone" type="tel" maxlength="30" autocomplete="tel" inputmode="tel"></label>
+</div>
+<div class="two">
+<label>Email<input name="email" type="email" maxlength="80" autocomplete="email"></label>
+<label>想聊的事<select name="item" required><option>邀請做節目</option><option>邀請演講／講座</option><option>影視製作諮詢</option><option>其他</option></select></label>
+</div>
+<p class="sub" style="font-size:20px;margin:-4px 0 16px">電話與 Email 請至少填一項。</p>
+<label>留言（選填）<textarea name="message" maxlength="500" placeholder="例如：想邀請的活動、時間、想聊的主題"></textarea></label>
+<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn" type="submit">送出，請與我聯絡</button>
+<p class="msg" role="status" aria-live="polite"></p>
+</form>
+<p class="sub" style="margin-top:28px">也可以先看節目播出平台：</p>
+<div class="row" style="margin-top:12px">
 <a class="btn" href="https://www.ntdtv.com.tw/" target="_blank" rel="noopener">新唐人亞太電視台官網</a>
 <a class="btn ghost" href="https://www.books.com.tw/products/0010964758" target="_blank" rel="noopener">推薦序出處</a>
 </div>
@@ -343,6 +379,28 @@ document.querySelectorAll('figure img,.show img,.book img,.grid2 img').forEach(f
 document.getElementById('lbX').addEventListener('click',function(){lb.classList.remove('open')});
 lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
 document.querySelectorAll('p,h1,h2,h3,li').forEach(function(el){el.childNodes.forEach(function(n){if(n.nodeType===3){var t=n.textContent;var i=t.lastIndexOf(' ');if(i>0){var before=t.slice(0,i),after=t.slice(i+1);if(after.length>0){n.textContent=before+' '+after}}}})});
+</script>
+<script>
+(function(){
+  var f=document.getElementById('lead'); if(!f) return;
+  var msg=f.querySelector('.msg'), btn=f.querySelector('button');
+  var again='送出，請與我聯絡';
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); msg.className='msg'; msg.textContent='';
+    var d={site:'zhang-qiongwen',name:f.name.value.trim(),phone:f.phone.value.trim(),item:f.item.value,email:f.email.value.trim(),message:f.message.value.trim(),website:f.website.value};
+    var okMail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email), okPhone=d.phone.replace(/\D/g,'').length>=8;
+    if(!d.name){msg.className='msg err';msg.textContent='請填寫姓名';f.name.focus();return;}
+    if(!okPhone&&!okMail){msg.className='msg err';msg.textContent='請填寫正確的電話或 Email（至少一項）';(d.phone?f.email:f.phone).focus();return;}
+    btn.disabled=true; btn.textContent='送出中…';
+    fetch('/api/works/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){return r.json().catch(function(){return {ok:false};});})
+      .then(function(j){
+        if(j.ok){f.innerHTML='<div class="done"><h3>資料已送出</h3><p class="sub" style="margin:0">謝謝您，我們收到了，會盡快與您聯絡。</p></div>';}
+        else{btn.disabled=false;btn.textContent=again;msg.className='msg err';msg.textContent=j.error||'送出失敗，請稍後再試';}
+      })
+      .catch(function(){btn.disabled=false;btn.textContent=again;msg.className='msg err';msg.textContent='網路不穩，請稍後再試';});
+  });
+})();
 </script>
 </body>
 </html>
